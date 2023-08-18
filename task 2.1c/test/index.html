@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vending Machine</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    
+   <div id="app">
+    
+   
+    <div id="data">
+
+        <h1>Welcome to my vending machine.</h1>
+        <input v-model="input" placeholder="Please enter the item no."> 
+        <ol>
+            <li v-for="(item, index) in items" :key="index">{{ item.name }}</li>
+        </ol>
+     
+       <h5 v-if="input === '1'">You have selected water. Please enter 1 dollar.</h5>
+       <h5 v-else-if="input === '2'">You have selected Juice. Please enter 2 dollars.</h5>
+       <h5 v-else-if="input === '3'">You have selected Cola. Please enter 1.5 dollars.</h5>
+       <h5 v-else-if="input === '4'">You have selected Milk. Please enter 4.5 dollars.</h5>
+       <h5 v-else>Please enter a valid item number.</h5>
+
+    </div>
+       
+   </div>
+   <script src="./script.js"></script>
+</body>
+</html>
